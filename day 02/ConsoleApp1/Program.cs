@@ -2,8 +2,6 @@
 
 using static System.Console;
 
-bool isActive = !isActive;
-
 int iu = 10;
 float fu = iu;
 WriteLine(iu);
