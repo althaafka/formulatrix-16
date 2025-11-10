@@ -14,6 +14,9 @@ NewNVirtualMethods();
 WriteLine("--------");
 WriteLine("CONSTRUCTOR");
 Constructor();
+WriteLine("--------");
+WriteLine("INTERFACES");
+Interfaces();
 
 
 void StaticField()
@@ -89,6 +92,39 @@ void Constructor()
     WriteLine("-----");
     NonNull a = new();
     WriteLine(a.a);
+}
+
+void Interfaces()
+{
+    var obj = new Example3();
+
+    obj.Foo();          // ✅ Panggil versi IExample1 (implicit)
+    ((IExample1)obj).Foo(); // ✅ Sama, IExample1
+    ((IExample2)obj).Foo(); // ✅ Panggil versi explicit IExample2
+
+}
+
+public interface IExample1
+{
+    public void Foo();
+}
+
+public interface IExample2
+{
+    public void Foo();
+}
+
+public class Example3: IExample1, IExample2
+{
+    public void Foo()
+    {
+        WriteLine("FOo2");
+    }
+
+    void IExample1.Foo()
+    {
+        WriteLine("Foo1");
+    }
 }
 
 public class NonNull
