@@ -17,6 +17,9 @@ Constructor();
 WriteLine("--------");
 WriteLine("INTERFACES");
 Interfaces();
+WriteLine("--------");
+WriteLine("GENERIC");
+Generics();
 
 
 void StaticField()
@@ -102,6 +105,24 @@ void Interfaces()
     ((IExample1)obj).Foo(); // ✅ Sama, IExample1
     ((IExample2)obj).Foo(); // ✅ Panggil versi explicit IExample2
 
+}
+
+void Generics()
+{
+    var stack = new Stack<int>();
+    stack.Push(5);
+    stack.Push(10);
+    WriteLine(stack.Pop());
+    WriteLine(stack.Pop());
+}
+
+public class Stack<T>
+{
+    int position;
+    T[] data = new T[100];
+
+    public void Push(T obj) => data[position++] = obj;
+    public T Pop() => data[--position];
 }
 
 public interface IExample1
