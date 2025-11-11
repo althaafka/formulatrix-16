@@ -149,3 +149,80 @@ public class PaymentFactory
         throw new ArgumentException($"Tipe pembayaran '{tipe}' tidak valid");
     }
 }
+
+public interface IPaymentObserver
+{
+    void Update(string transaksiId, bool success, decimal jumlah, string methode);
+}
+
+public class CustomerNotification : IPaymentObserver
+{
+    private string namaCustomer;
+    private string email;
+    public CustomerNotification(string namaCustomer, string email)
+    {
+        this.namaCustomer = namaCustomer;
+        this.email = email;
+    }
+
+    public void Update(string transaksiId, bool success, decimal jumlah, string metode)
+    {
+        Console.WriteLine("\n📧 [EMAIL CUSTOMER]");
+        Console.WriteLine($"Kepada: {namaCustomer} ({email})");
+
+        if (success)
+        {
+            Console.WriteLine($"✓ Pembayaran Anda sebesar Rp {jumlah:N0} via {metode} telah berhasil!");
+            Console.WriteLine($"ID Transaksi: {transaksiId}");
+            Console.WriteLine("Pesanan Anda sedang diproses.");
+        }
+        else
+        {
+            Console.WriteLine($"✗ Pembayaran Anda sebesar Rp {jumlah:N0} via {metode} gagal.");
+            Console.WriteLine("Silakan coba metode pembayaran lain atau hubungi CS.");
+        }
+    }
+}
+
+public class AdminNotification : IPaymentObserver
+{
+    public void Update(string transaksiId, bool success, decimal jumlah, string metode)
+    {
+        Console.WriteLine("\n🔔 [NOTIFIKASI ADMIN]");
+        Console.WriteLine($"Transaksi ID: {transaksiId}");
+        Console.WriteLine($"Status: {(success ? "BERHASIL ✓" : "GAGAL ✗")}");
+        Console.WriteLine($"Metode: {metode}");
+        Console.WriteLine($"Jumlah: Rp {jumlah:N0}");
+        Console.WriteLine($"Waktu: {DateTime.Now:dd/MM/yyyy HH:mm:ss}");
+    }
+}
+
+public class LogSystem : IPaymentObserver
+{
+    private List<string> logs = new List<string>();
+    public void Update(string transaksiId, bool success, decimal jumlah, string metode)
+    {
+        string status = success ? "SUCCESS" : "FAILED";
+        string logEntry = $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] {transaksiId} | {metode} | Rp {jumlah:N0} | {status}";
+        logs.Add(logEntry);
+
+        Console.WriteLine("\n📝 [LOG SYSTEM]");
+        Console.WriteLine(logEntry);
+    }
+
+    public void TampilkanSemuaLog()
+    {
+        Console.WriteLine("\n===== HISTORY LOG TRANSAKSI =====");
+        foreach (var log in logs)
+        {
+            Console.WriteLine(log);
+        }
+        Console.WriteLine("=================================\n");
+    }
+}
+
+public class PaymentProcessor
+{
+    private List<IPaymentObserver> observers = new List<IPaymentObserver>();
+    private IPaymentStrategy paymentStrategy;
+}
