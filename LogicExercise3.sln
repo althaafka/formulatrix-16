@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day 09", "day 09", "{FEEAFFE6-D2EA-4803-8BE8-CC3907A95A9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicExercise3", "day 09\LogicExercise3\LogicExercise3.csproj", "{1757CF81-8F2D-4A4B-9857-4880552723EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnoGame", "day 09\UnoGame\UnoGame.csproj", "{58A61AFE-8889-4509-9702-470AAA62808D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day 14", "day 14", "{7BCAEBB5-9BEB-44EB-8E99-B42D4D160BDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalLogicExcerscise", "day 14\FinalLogicExcerscise\FinalLogicExcerscise.csproj", "{3CC174ED-4D44-4039-85A0-95C9C7CA3756}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day 17", "day 17", "{F4A48B83-59B3-46DA-9028-39817B3D79C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "day 17\ConsoleApp1\ConsoleApp1.csproj", "{9B957621-A21D-48C3-9A91-7CDB669E3826}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1757CF81-8F2D-4A4B-9857-4880552723EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1757CF81-8F2D-4A4B-9857-4880552723EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1757CF81-8F2D-4A4B-9857-4880552723EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1757CF81-8F2D-4A4B-9857-4880552723EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58A61AFE-8889-4509-9702-470AAA62808D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58A61AFE-8889-4509-9702-470AAA62808D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58A61AFE-8889-4509-9702-470AAA62808D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58A61AFE-8889-4509-9702-470AAA62808D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CC174ED-4D44-4039-85A0-95C9C7CA3756}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CC174ED-4D44-4039-85A0-95C9C7CA3756}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CC174ED-4D44-4039-85A0-95C9C7CA3756}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CC174ED-4D44-4039-85A0-95C9C7CA3756}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B957621-A21D-48C3-9A91-7CDB669E3826}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B957621-A21D-48C3-9A91-7CDB669E3826}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B957621-A21D-48C3-9A91-7CDB669E3826}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B957621-A21D-48C3-9A91-7CDB669E3826}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1757CF81-8F2D-4A4B-9857-4880552723EB} = {FEEAFFE6-D2EA-4803-8BE8-CC3907A95A9D}
+		{58A61AFE-8889-4509-9702-470AAA62808D} = {FEEAFFE6-D2EA-4803-8BE8-CC3907A95A9D}
+		{3CC174ED-4D44-4039-85A0-95C9C7CA3756} = {7BCAEBB5-9BEB-44EB-8E99-B42D4D160BDF}
+		{9B957621-A21D-48C3-9A91-7CDB669E3826} = {F4A48B83-59B3-46DA-9028-39817B3D79C9}
+	EndGlobalSection
+EndGlobal
