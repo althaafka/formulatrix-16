@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Calculator.Services;
+using Serilog;
 
 namespace Calculator.Controllers;
 
@@ -17,6 +18,12 @@ public class MathController: ControllerBase
     [HttpGet("add")]
     public ActionResult<int> Add(int a, int b)
     {
-        return Ok(_calculator.Add(a, b));
+        Log.ForContext("RequestId", HttpContext.TraceIdentifier)
+            .Information("Received Add request with {A} and {B}", a, b);
+
+        int result = _calculator.Add(a, b);
+
+        Log.Information("Returning result {Result} for Add({A}, {B})", result, a, b);
+        return Ok(result);
     }
 }
